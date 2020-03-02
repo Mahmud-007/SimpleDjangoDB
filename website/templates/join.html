@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Join Today</h1>
+    <br/><br/>
+    <form method="post" action="{% url 'join' %}">
+
+    {% csrf_token  %}
+
+  <div class="form-group">
+
+    <input type="text" class="form-control" placeholder="First Name" name="first_name" value={{ first_name }}>
+  </div>
+
+    <div class="form-group">
+
+    <input type="text" class="form-control" placeholder="Last Name" name="last_name" value={{last_name}}>
+  </div>
+
+        <div class="form-group">
+
+    <input type="email" class="form-control"  aria-describedby="emailHelp" placeholder="Email" name="email" value={{email}}>
+
+  </div>
+
+        <div class="form-group">
+
+    <input type="password" class="form-control" placeholder="Password" name="password" value={{password}}>
+  </div>
+
+        <div class="form-group">
+
+
+
+    <input type="Number" class="form-control" placeholder="Age" name="age" value={{age}}>
+  </div> <br/>
+
+
+  <button type="submit" class="btn btn-primary">Sign Up</button>
+</form>
+
+{% endblock %}
